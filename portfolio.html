@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio · Breno Coelho — Fotógrafo em Recife</title>
+<meta name="description" content="Portfólio de Breno Coelho: ensaios, esportes, torcidas e eventos em Recife/PE.">
+<meta property="og:title" content="Portfólio · Breno Coelho">
+<meta property="og:description" content="Portfólio de Breno Coelho: ensaios, esportes, torcidas e eventos em Recife/PE.">
+<meta property="og:image" content="img/breno.jpg">
+<meta name="theme-color" content="#0E0D0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav wrap" aria-label="Principal">
+    <a href="index.html" class="logo" aria-label="Breno Coelho — voltar aos links">breno<span class="acc">.</span>coelho</a>
+    <div class="nav-links">
+      <a href="portfolio.html" class="hide-sm" aria-current="page">Portfólio</a>
+      <a href="sobre.html" class="hide-sm">Sobre</a>
+      <a href="pacotes.html" class="hide-sm">Pacotes</a>
+      <a href="cliente.html" class="hide-sm">Área do cliente</a>
+      <a href="agendar.html" class="btn btn-acc btn-sm">Agendar<span class="hide-sm">&nbsp;ensaio</span></a>
+      <button type="button" class="menu-btn show-sm" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="portfolio.html" aria-current="page">Portfólio</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="cliente.html">Área do cliente</a>
+    <a href="agendar.html">Agendar ensaio</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap" style="padding-top:20px"><a href="index.html" class="back-link"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Todos os links</a></div>
+<!-- PORTFÓLIO -->
+<section id="portfolio" class="section wrap">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow acc">Portfólio</p>
+      <h1 class="h2">Trabalhos recentes</h1>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar portfólio">
+      <button type="button" class="chip is-on" data-filter="todos" aria-pressed="true">Todos</button>
+      <button type="button" class="chip" data-filter="ensaios" aria-pressed="false">Ensaios</button>
+      <button type="button" class="chip" data-filter="esportes" aria-pressed="false">Esportes</button>
+      <button type="button" class="chip" data-filter="torcidas" aria-pressed="false">Torcidas</button>
+      <button type="button" class="chip" data-filter="eventos" aria-pressed="false">Eventos</button>
+    </div>
+  </div>
+  <div class="gallery" id="gallery">
+    <figure class="shot" data-cat="ensaios" data-title="Ensaio sob as sombrinhas" data-place="Recife Antigo">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Ensaio sob as sombrinhas"><img src="img/sombrinhas.jpg" alt="Mulher pulando de braços abertos sob sombrinhas coloridas" loading="lazy"></button>
+      <span class="badge">Ensaios</span>
+      <figcaption><span>Ensaio sob as sombrinhas</span><span class="muted">Recife Antigo</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="esportes" data-title="Corrida na ponte" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Corrida na ponte"><img src="img/corrida.jpg" alt="Homem correndo sem camisa numa ponte do centro do Recife" loading="lazy"></button>
+      <span class="badge">Esportes</span>
+      <figcaption><span>Corrida na ponte</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="ensaios" data-title="Retrato no paredão" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Retrato no paredão"><img src="img/retrato.jpg" alt="Homem sorrindo e estendendo um copo diante de parede amarela com caixas de som" loading="lazy"></button>
+      <span class="badge">Ensaios</span>
+      <figcaption><span>Retrato no paredão</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Fantasia de dia de jogo" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Fantasia de dia de jogo"><img src="img/torcida-fantasia.jpg" alt="Torcedor com fantasia vermelha, branca e preta na chegada ao jogo" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Fantasia de dia de jogo</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="ensaios" data-title="Ensaio no paredão" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Ensaio no paredão"><img src="img/skol.jpg" alt="Mulher sorrindo de óculos diante de parede amarela" loading="lazy"></button>
+      <span class="badge">Ensaios</span>
+      <figcaption><span>Ensaio no paredão</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="esportes" data-title="Patins no centro" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Patins no centro"><img src="img/patins.jpg" alt="Homem de patins na ponte fazendo sinal de positivo" loading="lazy"></button>
+      <span class="badge">Esportes</span>
+      <figcaption><span>Patins no centro</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Torcedor símbolo" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Torcedor símbolo"><img src="img/mister-n.jpg" alt="Torcedor de rosto pintado de vermelho e branco fazendo joinha" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Torcedor símbolo</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="ensaios" data-title="Casal" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Casal"><img src="img/casal.jpg" alt="Casal se beijando diante de parede amarela" loading="lazy"></button>
+      <span class="badge">Ensaios</span>
+      <figcaption><span>Casal</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="eventos" data-title="Aniversário" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Aniversário"><img src="img/aniversario.jpg" alt="Grupo com camisas de time segurando balão dourado em forma de B" loading="lazy"></button>
+      <span class="badge">Eventos</span>
+      <figcaption><span>Aniversário</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Pequeno torcedor" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Pequeno torcedor"><img src="img/torcedor.jpg" alt="Criança de boné vermelho agachada no clube" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Pequeno torcedor</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Amigos de arquibancada" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Amigos de arquibancada"><img src="img/amigos-torcida.jpg" alt="Dois amigos com camisas de time fazendo pose" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Amigos de arquibancada</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Torcedor" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Torcedor"><img src="img/torcedor-chapeu.jpg" alt="Torcedor de chapéu e camisa listrada fazendo sinal de hang loose" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Torcedor</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="ensaios" data-title="Ensaio alvirrubro" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Ensaio alvirrubro"><img src="img/nautico-ensaio.jpg" alt="Mulher com camisa alvirrubra posando junto a uma árvore no clube" loading="lazy"></button>
+      <span class="badge">Ensaios</span>
+      <figcaption><span>Ensaio alvirrubro</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Chegada ao estádio" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Chegada ao estádio"><img src="img/torcida-estadio.jpg" alt="Torcedores filmando a fumaça na frente do estádio" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Chegada ao estádio</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <figure class="shot" data-cat="torcidas" data-title="Bateria e torcida" data-place="Recife">
+      <button type="button" class="thumb" aria-label="Ampliar foto: Bateria e torcida"><img src="img/torcida-sinistra.jpg" alt="Torcedores de costas com camisas vermelhas da torcida" loading="lazy"></button>
+      <span class="badge">Torcidas</span>
+      <figcaption><span>Bateria e torcida</span><span class="muted">Recife</span></figcaption>
+    </figure>
+    <a href="https://www.instagram.com/brenocoelhphoto/" target="_blank" rel="noopener" class="ig-card">
+      <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="acc"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
+      <strong>Veja mais no Instagram</strong>
+      <span class="muted">@brenocoelhphoto →</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap cta-band">
+  <div class="client">
+    <div>
+      <p class="eyebrow acc" style="font-weight:600">Próximo passo</p>
+      <h2 class="h3">Curtiu? Bora marcar o seu.</h2>
+      <p>Escolha o pacote, a data e o horário em poucos cliques.</p>
+    </div>
+    <a href="agendar.html" class="btn btn-acc">Agendar agora</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer wrap">
+  <a href="index.html" class="logo" style="font-size:20px">breno<span class="acc">.</span>coelho</a>
+  <span>Recife — PE · Ensaios e eventos esportivos</span>
+  <span>© <span class="js-year">2026</span> Breno Coelho. Todos os direitos reservados.</span>
+</footer>
+
+<a href="#" class="wa-float js-wa" aria-label="Falar com o Breno no WhatsApp">
+  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
+</a>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Fechar"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="lb-row">
+    <button type="button" class="lb-btn" id="lbPrev" aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <img id="lbImg" src="" alt="">
+    <button type="button" class="lb-btn" id="lbNext" aria-label="Próxima foto"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

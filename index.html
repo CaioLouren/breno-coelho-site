@@ -2,295 +2,160 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Breno Coelho — Fotógrafo em Recife</title>
-<meta name="description" content="Breno Coelho, fotógrafo em Recife/PE. Ensaios e eventos esportivos com olhar jovem e direção leve. Agende pelo WhatsApp.">
-<meta property="og:title" content="Breno Coelho — Fotógrafo em Recife">
-<meta property="og:description" content="Imagens que falam por você. Ensaios e eventos esportivos em Recife/PE.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Breno Coelho · Fotógrafo em Recife</title>
+<meta name="description" content="Breno Coelho, fotógrafo em Recife/PE. Ensaios e eventos esportivos. Agende seu ensaio, veja o portfólio e acesse sua galeria.">
+<meta property="og:title" content="Breno Coelho · Fotógrafo">
+<meta property="og:description" content="Criando imagens que falam por você. Ensaios e eventos esportivos em Recife/PE.">
 <meta property="og:image" content="img/breno.jpg">
 <meta name="theme-color" content="#0E0D0B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0D0B;--surface:#1A1815;--line:#2C2924;--text:#F1ECE3;--soft:#C9C2B6;--muted:#A9A296;--acc:#FF6A3D;--wa:#25D366}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.page{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding-bottom:calc(32px + env(safe-area-inset-bottom))}
+
+/* Capa com fotos */
+.cover{position:relative;height:250px;display:grid;grid-template-columns:1.1fr 1fr 1fr 1.1fr;gap:3px;overflow:hidden;clip-path:ellipse(95% 100% at 50% 0)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;animation:zoom 14s ease-in-out infinite alternate}
+.cover img:nth-child(2){animation-delay:-4s}.cover img:nth-child(3){animation-delay:-8s}.cover img:nth-child(4){animation-delay:-2s}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,13,11,0) 55%,rgba(14,13,11,.55))}
+@keyframes zoom{to{transform:scale(1.08)}}
+
+/* Perfil */
+.profile{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px;margin-top:-70px;position:relative;z-index:2}
+.avatar{width:140px;height:140px;border-radius:50%;padding:4px;background:conic-gradient(from 200deg,var(--acc),#F2B134,var(--acc));box-shadow:0 12px 32px rgba(0,0,0,.5)}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--bg);display:block}
+.name{margin:18px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:38px;line-height:1;letter-spacing:-.03em}
+.name span{color:var(--acc)}
+.role{margin:10px 0 0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.bio{margin:14px 0 0;font-size:16px;color:var(--soft);max-width:320px;line-height:1.5}
+.socials{display:flex;gap:12px;margin-top:20px}
+.socials a{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,color .2s}
+.socials a:hover{border-color:var(--acc);color:var(--acc)}
+
+/* Links */
+.links{display:flex;flex-direction:column;gap:10px;padding:28px 20px 0}
+.link{display:flex;align-items:center;gap:14px;min-height:72px;padding:14px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);transition:transform .2s,border-color .2s,background .2s}
+.link:hover{transform:translateY(-2px);border-color:var(--acc)}
+.link:active{transform:scale(.99)}
+.link .ico{flex-shrink:0;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#26231F;color:var(--acc)}
+.link .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.link strong{font-size:16px;font-weight:600}
+.link small{font-size:13px;color:var(--muted)}
+.link .arrow{flex-shrink:0;color:var(--muted);transition:transform .2s}
+.link:hover .arrow{transform:translateX(3px);color:var(--acc)}
+.link.primary{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.link.primary .ico{background:rgba(14,13,11,.14);color:var(--bg)}
+.link.primary small,.link.primary .arrow{color:rgba(14,13,11,.75)}
+.link.primary:hover .arrow{color:var(--bg)}
+
+/* Trabalhos */
+.recent{padding:32px 20px 0}
+.recent-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.recent-head h2{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.recent-head a{font-size:14px;color:var(--acc)}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.thumbs a{aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:var(--surface)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.thumbs a:hover img{transform:scale(1.05)}
+
+.foot{margin-top:auto;padding:36px 20px 0;text-align:center;font-size:13px;color:var(--muted)}
+.foot b{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--text);font-size:16px}
+.foot b span{color:var(--acc)}
+
+/* Entrada */
+.fade{opacity:0;transform:translateY(12px);animation:in .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.cover img{animation:none}}
+@media (min-width:600px){.page{padding-top:24px}.cover{border-radius:24px 24px 0 0}}
+</style>
 </head>
 <body>
+<main class="page">
+  <div class="cover" aria-hidden="true">
+    <img src="img/sombrinhas.jpg" alt="">
+    <img src="img/corrida.jpg" alt="" style="object-position:center 55%">
+    <img src="img/retrato.jpg" alt="" style="object-position:center 35%">
+    <img src="img/torcida-fantasia.jpg" alt="">
+  </div>
 
-<header class="topbar">
-  <nav class="nav wrap" aria-label="Principal">
-    <a href="#inicio" class="logo">breno<span class="acc">.</span>coelho</a>
-    <div class="nav-links">
-      <a href="#portfolio" class="hide-sm">Portfólio</a>
-      <a href="#sobre" class="hide-sm">Sobre</a>
-      <a href="#pacotes" class="hide-sm">Pacotes</a>
-      <a href="#duvidas" class="hide-sm">Dúvidas</a>
-      <a href="#cliente" class="hide-sm">Área do cliente</a>
-      <a href="#contato" class="btn btn-acc btn-sm">Agendar ensaio</a>
-      <button type="button" class="menu-btn show-sm" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+  <section class="profile">
+    <div class="avatar fade"><img src="img/breno.jpg" alt="Breno Coelho com sua câmera"></div>
+    <h1 class="name fade" style="animation-delay:.08s">Breno Coelho<span>.</span></h1>
+    <p class="role fade" style="animation-delay:.14s">Fotógrafo · Recife — PE</p>
+    <p class="bio fade" style="animation-delay:.2s">Criando imagens que falam por você. Ensaios e eventos esportivos.</p>
+    <div class="socials fade" style="animation-delay:.26s">
+      <a href="https://www.instagram.com/brenocoelhphoto/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
+      </a>
+      <a href="#" class="js-wa" data-msg="Oi, Breno! Vim pelo seu link." aria-label="WhatsApp">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
+      </a>
+      <a href="agendar.html" aria-label="Agendar">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
     </div>
+  </section>
+
+  <nav class="links" aria-label="Links">
+    <a href="agendar.html" class="link primary fade" style="animation-delay:.32s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+      <span class="txt"><strong>Agendar meu ensaio</strong><small>Escolha pacote, data e horário</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="portfolio.html" class="link fade" style="animation-delay:.38s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+      <span class="txt"><strong>Portfólio</strong><small>Ensaios, esportes, torcidas e eventos</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="pacotes.html" class="link fade" style="animation-delay:.44s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span>
+      <span class="txt"><strong>Pacotes e valores</strong><small>Ensaios, eventos e esportes</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="pacotes.html#esportivos" class="link fade" style="animation-delay:.5s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 16v5M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
+      <span class="txt"><strong>Eventos esportivos</strong><small>Jogos, corridas e campeonatos</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="sobre.html" class="link fade" style="animation-delay:.56s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+      <span class="txt"><strong>Sobre mim</strong><small>Quem está por trás da câmera</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="cliente.html" class="link fade" style="animation-delay:.62s">
+      <span class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+      <span class="txt"><strong>Encontre sua foto</strong><small>Acesse sua galeria privada</small></span>
+      <svg class="arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
   </nav>
-  <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#pacotes">Pacotes</a>
-    <a href="#duvidas">Dúvidas</a>
-    <a href="#cliente">Área do cliente</a>
-  </div>
-</header>
 
-<main>
-<!-- HERO -->
-<section id="inicio" class="hero wrap">
-  <div class="hero-text">
-    <p class="eyebrow muted">Fotógrafo · Recife, Pernambuco</p>
-    <h1 class="display">Imagens que falam por <span class="acc">você</span>.</h1>
-    <p class="lead">Sou o Breno Coelho, fotógrafo de Recife. Faço ensaios e eventos esportivos com olhar jovem e direção leve — da rua ao campo, pra você se ver nas fotos do jeito que é.</p>
-    <div class="row">
-      <a href="#contato" class="btn btn-acc">Quero meu ensaio</a>
-      <a href="#portfolio" class="btn btn-ghost">Ver portfólio</a>
+  <section class="recent fade" style="animation-delay:.68s" aria-labelledby="recentes">
+    <div class="recent-head"><h2 id="recentes">Trabalhos recentes</h2><a href="portfolio.html">Ver todos →</a></div>
+    <div class="thumbs">
+      <a href="portfolio.html" aria-label="Ver ensaio no paredão no portfólio"><img src="img/skol.jpg" alt="Ensaio no paredão" loading="lazy"></a>
+      <a href="portfolio.html" aria-label="Ver foto de torcida no portfólio"><img src="img/mister-n.jpg" alt="Torcedor símbolo" loading="lazy"></a>
+      <a href="portfolio.html" aria-label="Ver foto de patins no portfólio"><img src="img/patins.jpg" alt="Patins no centro" loading="lazy"></a>
     </div>
-  </div>
-  <div class="hero-grid">
-    <div class="tile tall"><img src="img/sombrinhas.jpg" alt="Mulher pulando de braços abertos sob sombrinhas coloridas no Recife Antigo"></div>
-    <div class="tile"><img src="img/retrato.jpg" alt="Homem sorrindo com copo diante de parede amarela com caixas de som" style="object-position:center 35%"></div>
-    <div class="tile"><img src="img/corrida.jpg" alt="Mulher correndo em calçadão à beira do rio" style="object-position:center 40%"></div>
-  </div>
-</section>
+  </section>
 
-<div class="strip" aria-hidden="true">
-  <div class="strip-track">
-    <span>Ensaios <i>✶</i> Eventos esportivos <i>✶</i> Futebol <i>✶</i> Corridas <i>✶</i> Aniversários <i>✶</i> Formaturas <i>✶</i> Recife <i>✶</i> Olinda <i>✶</i>&nbsp;</span>
-    <span>Ensaios <i>✶</i> Eventos esportivos <i>✶</i> Futebol <i>✶</i> Corridas <i>✶</i> Aniversários <i>✶</i> Formaturas <i>✶</i> Recife <i>✶</i> Olinda <i>✶</i>&nbsp;</span>
-  </div>
-</div>
-
-<!-- PORTFÓLIO -->
-<section id="portfolio" class="section wrap">
-  <div class="section-head">
-    <div>
-      <p class="eyebrow acc">01 — Portfólio</p>
-      <h2 class="h2">Trabalhos recentes</h2>
-    </div>
-    <div class="filters" role="group" aria-label="Filtrar portfólio">
-      <button type="button" class="chip is-on" data-filter="todos" aria-pressed="true">Todos</button>
-      <button type="button" class="chip" data-filter="ensaios" aria-pressed="false">Ensaios</button>
-      <button type="button" class="chip" data-filter="esportes" aria-pressed="false">Esportes</button>
-      <button type="button" class="chip" data-filter="eventos" aria-pressed="false">Eventos</button>
-    </div>
-  </div>
-  <div class="gallery" id="gallery">
-    <figure class="shot" data-cat="ensaios" data-title="Ensaio sob as sombrinhas" data-place="Recife Antigo">
-      <button type="button" class="thumb" aria-label="Ampliar foto: Ensaio sob as sombrinhas"><img src="img/sombrinhas.jpg" alt="Mulher pulando de braços abertos sob sombrinhas coloridas" loading="lazy"></button>
-      <span class="badge">Ensaios</span>
-      <figcaption><span>Ensaio sob as sombrinhas</span><span class="muted">Recife Antigo</span></figcaption>
-    </figure>
-    <figure class="shot" data-cat="esportes" data-title="Corrida" data-place="Recife">
-      <button type="button" class="thumb" aria-label="Ampliar foto: Corrida"><img src="img/corrida.jpg" alt="Mulher correndo em calçadão à beira do rio" loading="lazy"></button>
-      <span class="badge">Esportes</span>
-      <figcaption><span>Corrida</span><span class="muted">Recife</span></figcaption>
-    </figure>
-    <figure class="shot" data-cat="ensaios" data-title="Retrato" data-place="Recife">
-      <button type="button" class="thumb" aria-label="Ampliar foto: Retrato"><img src="img/retrato.jpg" alt="Homem sorrindo com copo diante de parede amarela com caixas de som" loading="lazy"></button>
-      <span class="badge">Ensaios</span>
-      <figcaption><span>Retrato</span><span class="muted">Recife</span></figcaption>
-    </figure>
-    <figure class="shot" data-cat="esportes" data-title="Pequeno torcedor" data-place="Estádio">
-      <button type="button" class="thumb" aria-label="Ampliar foto: Pequeno torcedor"><img src="img/torcedor.jpg" alt="Criança de boné vermelho agachada na quadra" loading="lazy"></button>
-      <span class="badge">Esportes</span>
-      <figcaption><span>Pequeno torcedor</span><span class="muted">Estádio</span></figcaption>
-    </figure>
-    <figure class="shot" data-cat="eventos" data-title="Aniversário tricolor" data-place="Recife">
-      <button type="button" class="thumb" aria-label="Ampliar foto: Aniversário tricolor"><img src="img/aniversario.jpg" alt="Grupo com camisas de time segurando balão de número 8" loading="lazy"></button>
-      <span class="badge">Eventos</span>
-      <figcaption><span>Aniversário tricolor</span><span class="muted">Recife</span></figcaption>
-    </figure>
-    <a href="https://www.instagram.com/brenocoelhphoto/" target="_blank" rel="noopener" class="ig-card">
-      <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="acc"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
-      <strong>Veja mais no Instagram</strong>
-      <span class="muted">@brenocoelhphoto →</span>
-    </a>
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section id="sobre" class="about">
-  <div class="wrap about-inner">
-    <div class="about-photo"><img src="img/breno.jpg" alt="Breno Coelho fotografando com sua câmera no gramado de um estádio" loading="lazy"></div>
-    <div class="about-text">
-      <p class="eyebrow" style="color:#A63A16">02 — Sobre</p>
-      <h2 class="h2">Prazer, eu sou o Breno.</h2>
-      <p>Tenho 22 anos, sou pernambucano e fotografo desde [ANO]. Do gramado do estádio às ruas coloridas do Recife Antigo, meu trabalho é criar imagens que falam por você: luz natural, gente à vontade e fotos que parecem a sua vida — não uma pose.</p>
-      <p>[Conte em 2–3 frases como começou na fotografia e por que curte fotografar esporte e gente.]</p>
-      <div class="stats">
-        <div><strong>[00]+</strong><span>ensaios feitos</span></div>
-        <div><strong>[00]</strong><span>eventos cobertos</span></div>
-        <div><strong>[0] dias</strong><span>prazo médio de entrega</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="section wrap">
-  <p class="eyebrow acc">03 — Como funciona</p>
-  <h2 class="h2">Do primeiro oi à galeria</h2>
-  <ol class="steps">
-    <li><span class="step-n">01</span><strong>Conversa</strong><span class="muted">Você me chama, me conta a ideia e a gente alinha estilo, local e data.</span></li>
-    <li><span class="step-n">02</span><strong>Planejamento</strong><span class="muted">Envio sugestões de roupa, horário de melhor luz e referências pro ensaio.</span></li>
-    <li><span class="step-n">03</span><strong>Dia das fotos</strong><span class="muted">Direção leve e descontraída — você não precisa saber posar.</span></li>
-    <li><span class="step-n">04</span><strong>Galeria online</strong><span class="muted">Fotos editadas numa galeria privada, prontas pra baixar e postar.</span></li>
-  </ol>
-</section>
-
-<!-- PACOTES -->
-<section id="pacotes" class="section wrap">
-  <div class="section-head">
-    <div>
-      <p class="eyebrow acc">04 — Pacotes</p>
-      <h2 class="h2">Escolha o seu</h2>
-    </div>
-    <p class="muted" style="max-width:380px;margin:0">Valores de referência. Pacotes personalizados para eventos e times sob orçamento.</p>
-  </div>
-  <div class="packages">
-    <article class="pkg featured">
-      <div class="pkg-top"><h3>Ensaio individual</h3><span class="tag">Mais pedido</span></div>
-      <p class="muted">Retratos, aniversário, formatura ou pra renovar o feed.</p>
-      <p class="price">[R$ 000]</p>
-      <ul><li>[1h] de ensaio</li><li>1 local em Recife ou Olinda</li><li>[20] fotos editadas</li><li>Galeria online privada</li></ul>
-      <a href="#contato" class="btn btn-acc" data-service="Ensaio individual">Quero esse</a>
-    </article>
-    <article class="pkg">
-      <div class="pkg-top"><h3>Casal ou família</h3></div>
-      <p class="muted">Namoro, pré-wedding, gestante ou família reunida.</p>
-      <p class="price">[R$ 000]</p>
-      <ul><li>[2h] de ensaio</li><li>Até 2 locais</li><li>[40] fotos editadas</li><li>Prévia em [48h]</li></ul>
-      <a href="#contato" class="btn btn-ghost" data-service="Casal ou família">Quero esse</a>
-    </article>
-    <article class="pkg">
-      <div class="pkg-top"><h3>Eventos esportivos</h3></div>
-      <p class="muted">Jogos, corridas, campeonatos e bastidores de times e atletas.</p>
-      <p class="price">Sob orçamento</p>
-      <ul><li>Cobertura do jogo ou da prova</li><li>Fotos de ação e de torcida</li><li>Entrega rápida pras redes</li><li>Pacotes para atletas e times</li></ul>
-      <a href="#contato" class="btn btn-ghost" data-service="Eventos esportivos">Quero esse</a>
-    </article>
-    <article class="pkg">
-      <div class="pkg-top"><h3>Eventos</h3></div>
-      <p class="muted">Aniversários, 15 anos, formaturas e festas.</p>
-      <p class="price">a partir de [R$ 000]</p>
-      <ul><li>Cobertura por hora</li><li>Todas as fotos tratadas</li><li>Entrega em [00] dias</li><li>Galeria pra convidados</li></ul>
-      <a href="#contato" class="btn btn-ghost" data-service="Eventos">Quero esse</a>
-    </article>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="wrap quotes">
-  <blockquote><p>“[Depoimento real de um cliente — peça permissão para publicar.]”</p><footer>[Nome do cliente] · [tipo de ensaio]</footer></blockquote>
-  <blockquote><p>“[Depoimento real de um cliente.]”</p><footer>[Nome do cliente] · [tipo de ensaio]</footer></blockquote>
-  <blockquote><p>“[Depoimento real de um cliente.]”</p><footer>[Nome do cliente] · [tipo de ensaio]</footer></blockquote>
-</section>
-
-<!-- FAQ -->
-<section id="duvidas" class="section wrap narrow">
-  <p class="eyebrow acc">05 — Dúvidas</p>
-  <h2 class="h2">Perguntas frequentes</h2>
-  <div class="faq">
-    <details open><summary>Nunca fiz ensaio e não sei posar. E agora?</summary><p>Relaxa — a maioria dos meus clientes também não sabia. Eu vou te guiando o tempo todo, com direção simples e clima leve.</p></details>
-    <details><summary>Em quanto tempo recebo as fotos?</summary><p>Ensaios em até [00] dias e eventos em até [00] dias, numa galeria online privada. Uma prévia chega antes.</p></details>
-    <details><summary>Você atende fora de Recife?</summary><p>Sim! Olinda, Região Metropolitana e litoral (Porto de Galinhas, Carneiros…). Para outras cidades, a taxa de deslocamento é combinada no orçamento.</p></details>
-    <details><summary>Como faço pra reservar a data?</summary><p>A data é garantida com um sinal de [00]% via Pix, e o restante é pago no dia do ensaio ou evento.</p></details>
-    <details><summary>E se chover no dia?</summary><p>A gente remarca sem custo para outra data disponível, ou adapta para um local coberto se você preferir.</p></details>
-    <details><summary>Quais formas de pagamento você aceita?</summary><p>Pix, transferência e cartão [em até 0x]. Tudo fica registrado num contrato simples enviado antes do ensaio.</p></details>
-    <details><summary>Posso pedir as fotos sem edição?</summary><p>Entrego apenas as fotos selecionadas e tratadas — é o que garante a qualidade do trabalho. Fotos extras podem ser adicionadas ao pacote.</p></details>
-  </div>
-</section>
-
-<!-- ÁREA DO CLIENTE -->
-<section id="cliente" class="wrap" style="padding-bottom:96px">
-  <div class="client">
-    <div>
-      <p class="eyebrow" style="font-weight:600">Área do cliente</p>
-      <h2 class="h3">Já fez seu ensaio? Suas fotos estão aqui.</h2>
-      <p>Acesse sua galeria privada com o código que você recebeu, baixe em alta resolução e escolha suas favoritas.</p>
-    </div>
-    <a href="#" class="btn btn-dark" id="galleryLink">
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-      Acessar minha galeria
-    </a>
-  </div>
-</section>
-
-<!-- CONTATO -->
-<section id="contato" class="contact">
-  <div class="wrap contact-inner">
-    <div class="contact-text">
-      <p class="eyebrow acc">06 — Contato</p>
-      <h2 class="display" style="font-size:clamp(40px,5.6vw,80px)">Bora marcar?</h2>
-      <p class="lead">Me conta o que você imagina e eu respondo em até 24h com disponibilidade e orçamento. Se preferir, chama direto no WhatsApp.</p>
-      <div class="contact-links">
-        <a href="#" class="btn btn-wa js-wa">
-          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
-          Chamar no WhatsApp
-        </a>
-        <a href="https://www.instagram.com/brenocoelhphoto/" target="_blank" rel="noopener" class="icon-link">
-          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
-          @brenocoelhphoto
-        </a>
-        <a href="mailto:[email]" class="icon-link">
-          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          [seu e-mail]
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-form">
-      <form id="quoteForm" novalidate>
-        <div class="field span2"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" required type="text" autocomplete="name" placeholder="Como você se chama?"></div>
-        <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" name="whats" required type="tel" autocomplete="tel" placeholder="(81) 9 0000-0000"></div>
-        <div class="field"><label for="f-data">Data desejada</label><input id="f-data" name="data" type="date"></div>
-        <div class="field span2"><label for="f-tipo">Tipo de trabalho</label>
-          <select id="f-tipo" name="tipo">
-            <option>Ensaio individual</option><option>Casal ou família</option><option>Eventos esportivos</option><option>Eventos</option><option>Outro</option>
-          </select>
-        </div>
-        <div class="field span2"><label for="f-msg">Conta um pouco da sua ideia</label><textarea id="f-msg" name="msg" rows="4" placeholder="Local, quantas pessoas, estilo que você curte…"></textarea></div>
-        <p class="form-error span2" id="formError" role="alert" hidden>Preencha seu nome e WhatsApp pra continuar.</p>
-        <button type="submit" class="btn btn-acc span2">Pedir orçamento</button>
-        <p class="small muted span2">Seu pedido vira uma mensagem pronta no WhatsApp do Breno. Seus dados são usados só para responder seu orçamento.</p>
-      </form>
-      <div class="sent" id="sentBox" role="status" hidden>
-        <span class="sent-title">Quase lá!</span>
-        <p>Sua mensagem para <strong id="sentService">—</strong> está pronta. É só tocar no botão e enviar — o Breno responde em até 24h com datas e valores.</p>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="sentWa">Enviar no WhatsApp</a>
-        <button type="button" class="btn btn-ghost" id="resetForm">Enviar outro pedido</button>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer class="foot"><b>breno<span>.</span>coelho</b><br>Recife — PE · © <span id="year">2026</span></footer>
 </main>
 
-<footer class="footer wrap">
-  <span class="logo" style="font-size:20px">breno<span class="acc">.</span>coelho</span>
-  <span>Recife — PE · Ensaios e eventos esportivos</span>
-  <span>© <span id="year">2026</span> Breno Coelho. Todos os direitos reservados.</span>
-</footer>
-
-<a href="#" class="wa-float js-wa" aria-label="Falar com o Breno no WhatsApp">
-  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
-</a>
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
-  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Fechar"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <div class="lb-row">
-    <button type="button" class="lb-btn" id="lbPrev" aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-    <img id="lbImg" src="" alt="">
-    <button type="button" class="lb-btn" id="lbNext" aria-label="Próxima foto"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
-  </div>
-  <p class="lb-caption" id="lbCaption"></p>
-</div>
-
-<script src="script.js"></script>
+<script>
+  // Mesmo número/link do script.js
+  const WHATSAPP = '558189085099';
+  document.querySelectorAll('.js-wa').forEach((a) => {
+    a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(a.dataset.msg || 'Oi, Breno!');
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

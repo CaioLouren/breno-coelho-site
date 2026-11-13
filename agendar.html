@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar ensaio · Breno Coelho — Fotógrafo em Recife</title>
+<meta name="description" content="Agende seu ensaio com Breno Coelho: escolha pacote, data e horário.">
+<meta property="og:title" content="Agendar ensaio · Breno Coelho">
+<meta property="og:description" content="Agende seu ensaio com Breno Coelho: escolha pacote, data e horário.">
+<meta property="og:image" content="img/breno.jpg">
+<meta name="theme-color" content="#0E0D0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav wrap" aria-label="Principal">
+    <a href="index.html" class="logo" aria-label="Breno Coelho — voltar aos links">breno<span class="acc">.</span>coelho</a>
+    <div class="nav-links">
+      <a href="portfolio.html" class="hide-sm">Portfólio</a>
+      <a href="sobre.html" class="hide-sm">Sobre</a>
+      <a href="pacotes.html" class="hide-sm">Pacotes</a>
+      <a href="cliente.html" class="hide-sm">Área do cliente</a>
+      <a href="agendar.html" class="btn btn-acc btn-sm" aria-current="page">Agendar<span class="hide-sm">&nbsp;ensaio</span></a>
+      <button type="button" class="menu-btn show-sm" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="portfolio.html">Portfólio</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="cliente.html">Área do cliente</a>
+    <a href="agendar.html" aria-current="page">Agendar ensaio</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap" style="padding-top:20px"><a href="index.html" class="back-link"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Todos os links</a></div>
+<!-- CONTATO / AGENDAMENTO -->
+<section id="contato" class="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-text">
+      <p class="eyebrow acc">Agendamento</p>
+      <h1 class="display" style="font-size:clamp(40px,5.6vw,80px)">Bora marcar?</h1>
+      <p class="lead">Escolha o pacote, a data e o horário. No final, seu pedido chega pronto no meu WhatsApp e no meu e-mail — eu confirmo em até 24h.</p>
+      <ul class="perks">
+        <li>Sinal de <span data-sinal>30%</span> garante a data</li>
+        <li>Remarcação grátis em caso de chuva</li>
+        <li>Pix, transferência ou cartão</li>
+      </ul>
+      <div class="contact-links">
+        <a href="#" class="btn btn-wa js-wa">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Tirar dúvidas no WhatsApp
+        </a>
+        <a href="https://www.instagram.com/brenocoelhphoto/" target="_blank" rel="noopener" class="icon-link">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
+          @brenocoelhphoto
+        </a>
+        <a href="#" class="icon-link js-mail" hidden>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span class="js-mail-text">e-mail</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="booking" id="agendar">
+      <ol class="bk-progress" aria-label="Etapas do agendamento">
+        <li data-p="1" class="is-on"><span>1</span>Serviço</li>
+        <li data-p="2"><span>2</span>Data</li>
+        <li data-p="3"><span>3</span>Seus dados</li>
+        <li data-p="4"><span>4</span>Confirmar</li>
+      </ol>
+
+      <section class="bk-panel" data-step="1" aria-labelledby="bk1">
+        <h3 class="bk-title" id="bk1">Qual trabalho você quer?</h3>
+        <div class="bk-services" id="bkServices" role="radiogroup" aria-labelledby="bk1"></div>
+        <fieldset class="bk-extras">
+          <legend>Extras (opcional)</legend>
+          <div id="bkExtras"></div>
+        </fieldset>
+        <div class="bk-nav">
+          <span class="bk-total">Total estimado <strong class="js-total">R$ 0,00</strong></span>
+          <button type="button" class="btn btn-acc" data-next>Escolher data</button>
+        </div>
+      </section>
+
+      <section class="bk-panel" data-step="2" aria-labelledby="bk2" hidden>
+        <h3 class="bk-title" id="bk2">Escolha a data e o horário</h3>
+        <div class="bk-date">
+          <div class="cal">
+            <div class="cal-head">
+              <button type="button" class="cal-nav" id="calPrev" aria-label="Mês anterior"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+              <strong id="calMonth" aria-live="polite"></strong>
+              <button type="button" class="cal-nav" id="calNext" aria-label="Próximo mês"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
+            <div class="cal-week" aria-hidden="true"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <p class="small muted cal-legend"><i class="dot"></i> Indisponível</p>
+          </div>
+          <div class="slots-wrap">
+            <p class="slots-label" id="slotsLabel">Escolha um dia no calendário</p>
+            <div class="slots" id="slots" role="radiogroup" aria-labelledby="slotsLabel"></div>
+            <p class="small muted" id="slotHint"></p>
+          </div>
+        </div>
+        <div class="bk-nav">
+          <button type="button" class="btn btn-ghost" data-back>Voltar</button>
+          <button type="button" class="btn btn-acc" data-next id="toStep3" disabled>Continuar</button>
+        </div>
+      </section>
+
+      <section class="bk-panel" data-step="3" aria-labelledby="bk3" hidden>
+        <h3 class="bk-title" id="bk3">Seus dados</h3>
+        <form id="bkForm" class="bk-form" novalidate>
+          <div class="field span2"><label for="f-nome">Nome completo</label><input id="f-nome" required type="text" autocomplete="name" placeholder="Como você se chama?"></div>
+          <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" required type="tel" autocomplete="tel" inputmode="tel" placeholder="(81) 9 0000-0000"></div>
+          <div class="field"><label for="f-email">E-mail <span class="muted">(opcional)</span></label><input id="f-email" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+          <div class="field span2"><label for="f-local">Local ou bairro do ensaio</label><input id="f-local" type="text" placeholder="Ex.: Recife Antigo, Olinda, Arena…"></div>
+          <div class="field span2"><label for="f-msg">Conta um pouco da sua ideia <span class="muted">(opcional)</span></label><textarea id="f-msg" rows="3" placeholder="Quantas pessoas, estilo que você curte, referências…"></textarea></div>
+          <p class="form-error span2" id="formError" role="alert" hidden></p>
+        </form>
+        <div class="bk-nav">
+          <button type="button" class="btn btn-ghost" data-back>Voltar</button>
+          <button type="button" class="btn btn-acc" data-next>Revisar pedido</button>
+        </div>
+      </section>
+
+      <section class="bk-panel" data-step="4" aria-labelledby="bk4" hidden>
+        <h3 class="bk-title" id="bk4">Confere se está tudo certo</h3>
+        <dl class="bk-summary" id="bkSummary"></dl>
+        <div class="bk-price">
+          <div><span>Total estimado</span><strong class="js-total">R$ 0,00</strong></div>
+          <div><span>Sinal para reservar (<span data-sinal>30%</span>)</span><strong id="bkSinal">R$ 0,00</strong></div>
+        </div>
+        <div class="bk-actions">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="bkWa">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
+            Confirmar pelo WhatsApp
+          </a>
+          <button type="button" class="btn btn-ghost" id="bkEmail">Enviar só por e-mail</button>
+        </div>
+        <p class="bk-status" id="bkStatus" role="status"></p>
+        <div class="bk-nav">
+          <button type="button" class="btn btn-ghost" data-back>Editar</button>
+          <button type="button" class="link-btn" id="bkRestart">Fazer outro agendamento</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer wrap">
+  <a href="index.html" class="logo" style="font-size:20px">breno<span class="acc">.</span>coelho</a>
+  <span>Recife — PE · Ensaios e eventos esportivos</span>
+  <span>© <span class="js-year">2026</span> Breno Coelho. Todos os direitos reservados.</span>
+</footer>
+
+<a href="#" class="wa-float js-wa" aria-label="Falar com o Breno no WhatsApp">
+  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
