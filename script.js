@@ -3,7 +3,7 @@
 // ============================================================
 const CONFIG = {
   // 55 + DDD + número, só dígitos
-  whatsapp: '558189085099',
+  whatsapp: '5581989085099',
   // Gmail do Breno para receber os pedidos (deixe '' para desligar o envio por e-mail)
   // Na 1ª vez, o FormSubmit manda um e-mail de ativação: é só clicar em "Activate".
   email: '',
