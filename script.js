@@ -3,7 +3,7 @@
 // ============================================================
 const CONFIG = {
   // 55 + DDD + número, só dígitos. Ex.: '5581999999999'
-  whatsapp: '55DDDNUMERO',
+  whatsapp: '558189085099',
   // Link da plataforma de galerias (Alboom, Pixieset, Google Drive...)
   galeriaClientes: '#',
 };
